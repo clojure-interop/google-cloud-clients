@@ -1,0 +1,220 @@
+(ns com.google.cloud.compute.v1.Snapshot
+  (:refer-clojure :only [require comment defn ->])
+  (:import [com.google.cloud.compute.v1 Snapshot]))
+
+(defn *new-builder
+  "prototype - `com.google.cloud.compute.v1.Snapshot`
+
+  returns: `com.google.cloud.compute.v1.Snapshot$Builder`"
+  (^com.google.cloud.compute.v1.Snapshot$Builder [^com.google.cloud.compute.v1.Snapshot prototype]
+    (Snapshot/newBuilder prototype))
+  (^com.google.cloud.compute.v1.Snapshot$Builder []
+    (Snapshot/newBuilder )))
+
+(defn *get-default-instance
+  "returns: `com.google.cloud.compute.v1.Snapshot`"
+  (^com.google.cloud.compute.v1.Snapshot []
+    (Snapshot/getDefaultInstance )))
+
+(defn get-source-disk-id
+  "[Output Only] The ID value of the disk used to create this snapshot. This value may be used to
+   determine whether the snapshot was taken from the current or a previous instance of a given
+   disk name.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getSourceDiskId))))
+
+(defn get-kind
+  "[Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getKind))))
+
+(defn get-status
+  "[Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or
+   UPLOADING.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getStatus))))
+
+(defn get-source-disk
+  "[Output Only] The source disk used to create this snapshot.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getSourceDisk))))
+
+(defn get-field-mask
+  "returns: `java.util.List<java.lang.String>`"
+  (^java.util.List [^Snapshot this]
+    (-> this (.getFieldMask))))
+
+(defn to-string
+  "returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.toString))))
+
+(defn get-labels-map
+  "Labels to apply to this snapshot. These can be later modified by the setLabels method. Label
+   values may be empty.
+
+  returns: `java.util.Map<java.lang.String,java.lang.String>`"
+  (^java.util.Map [^Snapshot this]
+    (-> this (.getLabelsMap))))
+
+(defn get-field-value
+  "field-name - `java.lang.String`
+
+  returns: `java.lang.Object`"
+  (^java.lang.Object [^Snapshot this ^java.lang.String field-name]
+    (-> this (.getFieldValue field-name))))
+
+(defn get-source-disk-encryption-key
+  "The customer-supplied encryption key of the source disk. Required if the source disk is
+   protected by a customer-supplied encryption key.
+
+  returns: `com.google.cloud.compute.v1.CustomerEncryptionKey`"
+  (^com.google.cloud.compute.v1.CustomerEncryptionKey [^Snapshot this]
+    (-> this (.getSourceDiskEncryptionKey))))
+
+(defn get-storage-locations-list
+  "GCS bucket storage location of the snapshot (regional or multi-regional).
+
+  returns: `java.util.List<java.lang.String>`"
+  (^java.util.List [^Snapshot this]
+    (-> this (.getStorageLocationsList))))
+
+(defn get-snapshot-encryption-key
+  "Encrypts the snapshot using a customer-supplied encryption key.
+
+   After you encrypt a snapshot using a customer-supplied key, you must provide the same key if
+   you use the snapshot later. For example, you must provide the encryption key when you create a
+   disk from the encrypted snapshot in a future request.
+
+   Customer-supplied encryption keys do not protect access to metadata of the snapshot.
+
+   If you do not provide an encryption key when creating the snapshot, then the snapshot will
+   be encrypted using an automatically generated key and you do not need to provide a key to use
+   the snapshot later.
+
+  returns: `com.google.cloud.compute.v1.CustomerEncryptionKey`"
+  (^com.google.cloud.compute.v1.CustomerEncryptionKey [^Snapshot this]
+    (-> this (.getSnapshotEncryptionKey))))
+
+(defn get-name
+  "Name of the resource; provided by the client when the resource is created. The name must be
+   1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   character must be a lowercase letter, and all following characters must be a dash, lowercase
+   letter, or digit, except the last character, which cannot be a dash.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getName))))
+
+(defn get-licenses-list
+  "[Output Only] A list of public visible licenses that apply to this snapshot. This can be
+   because the original image had licenses attached (such as a Windows image).
+
+  returns: `java.util.List<java.lang.String>`"
+  (^java.util.List [^Snapshot this]
+    (-> this (.getLicensesList))))
+
+(defn get-label-fingerprint
+  "A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the
+   labels set used for optimistic locking. The fingerprint is initially generated by Compute
+   Engine and changes after every request to modify or update labels. You must always provide an
+   up-to-date fingerprint hash in order to update or change labels, otherwise the request will
+   fail with error 412 conditionNotMet.
+
+   To see the latest fingerprint, make a get() request to retrieve a snapshot.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getLabelFingerprint))))
+
+(defn get-description
+  "An optional description of this resource. Provide this property when you create the resource.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getDescription))))
+
+(defn get-disk-size-gb
+  "[Output Only] Size of the snapshot, specified in GB.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getDiskSizeGb))))
+
+(defn get-id
+  "[Output Only] The unique identifier for the resource. This identifier is defined by the server.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getId))))
+
+(defn get-api-message-request-body
+  "returns: `com.google.api.gax.httpjson.ApiMessage`"
+  (^com.google.api.gax.httpjson.ApiMessage [^Snapshot this]
+    (-> this (.getApiMessageRequestBody))))
+
+(defn get-storage-bytes
+  "[Output Only] A size of the storage used by the snapshot. As snapshots share storage, this
+   number is expected to change with snapshot creation/deletion.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getStorageBytes))))
+
+(defn get-storage-bytes-status
+  "[Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as
+   a result of shared storage reallocation. This status can either be UPDATING, meaning the size
+   of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is
+   up-to-date.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getStorageBytesStatus))))
+
+(defn get-self-link
+  "[Output Only] Server-defined URL for the resource.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getSelfLink))))
+
+(defn get-license-codes-list
+  "[Output Only] Integer license codes indicating which licenses are attached to this snapshot.
+
+  returns: `java.util.List<java.lang.String>`"
+  (^java.util.List [^Snapshot this]
+    (-> this (.getLicenseCodesList))))
+
+(defn hash-code
+  "returns: `int`"
+  (^Integer [^Snapshot this]
+    (-> this (.hashCode))))
+
+(defn get-creation-timestamp
+  "[Output Only] Creation timestamp in RFC3339 text format.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Snapshot this]
+    (-> this (.getCreationTimestamp))))
+
+(defn equals
+  "o - `java.lang.Object`
+
+  returns: `boolean`"
+  (^Boolean [^Snapshot this ^java.lang.Object o]
+    (-> this (.equals o))))
+
+(defn to-builder
+  "returns: `com.google.cloud.compute.v1.Snapshot$Builder`"
+  (^com.google.cloud.compute.v1.Snapshot$Builder [^Snapshot this]
+    (-> this (.toBuilder))))
+

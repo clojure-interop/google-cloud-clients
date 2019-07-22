@@ -1,0 +1,294 @@
+(ns com.google.cloud.compute.v1.Image
+  (:refer-clojure :only [require comment defn ->])
+  (:import [com.google.cloud.compute.v1 Image]))
+
+(defn *new-builder
+  "prototype - `com.google.cloud.compute.v1.Image`
+
+  returns: `com.google.cloud.compute.v1.Image$Builder`"
+  (^com.google.cloud.compute.v1.Image$Builder [^com.google.cloud.compute.v1.Image prototype]
+    (Image/newBuilder prototype))
+  (^com.google.cloud.compute.v1.Image$Builder []
+    (Image/newBuilder )))
+
+(defn *get-default-instance
+  "returns: `com.google.cloud.compute.v1.Image`"
+  (^com.google.cloud.compute.v1.Image []
+    (Image/getDefaultInstance )))
+
+(defn get-source-disk-id
+  "[Output Only] The ID value of the disk used to create this image. This value may be used to
+   determine whether the image was taken from the current or a previous instance of a given disk
+   name.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getSourceDiskId))))
+
+(defn get-kind
+  "[Output Only] Type of the resource. Always compute#image for images.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getKind))))
+
+(defn get-status
+  "[Output Only] The status of the image. An image can be used to create other resources, such as
+   instances, only after the image has been successfully created and the status is set to READY.
+   Possible values are FAILED, PENDING, or READY.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getStatus))))
+
+(defn get-source-disk
+  "URL of the source disk used to create this image. This can be a full or valid partial URL. You
+   must provide either this property or the rawDisk.source property but not both to create an
+   image. For example, the following are valid values: -
+   https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk -
+   projects/project/zones/zone/disks/disk - zones/zone/disks/disk
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getSourceDisk))))
+
+(defn get-source-snapshot-encryption-key
+  "The customer-supplied encryption key of the source snapshot. Required if the source snapshot is
+   protected by a customer-supplied encryption key.
+
+  returns: `com.google.cloud.compute.v1.CustomerEncryptionKey`"
+  (^com.google.cloud.compute.v1.CustomerEncryptionKey [^Image this]
+    (-> this (.getSourceSnapshotEncryptionKey))))
+
+(defn get-field-mask
+  "returns: `java.util.List<java.lang.String>`"
+  (^java.util.List [^Image this]
+    (-> this (.getFieldMask))))
+
+(defn to-string
+  "returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.toString))))
+
+(defn get-labels-map
+  "Labels to apply to this image. These can be later modified by the setLabels method.
+
+  returns: `java.util.Map<java.lang.String,java.lang.String>`"
+  (^java.util.Map [^Image this]
+    (-> this (.getLabelsMap))))
+
+(defn get-field-value
+  "field-name - `java.lang.String`
+
+  returns: `java.lang.Object`"
+  (^java.lang.Object [^Image this ^java.lang.String field-name]
+    (-> this (.getFieldValue field-name))))
+
+(defn get-source-disk-encryption-key
+  "The customer-supplied encryption key of the source disk. Required if the source disk is
+   protected by a customer-supplied encryption key.
+
+  returns: `com.google.cloud.compute.v1.CustomerEncryptionKey`"
+  (^com.google.cloud.compute.v1.CustomerEncryptionKey [^Image this]
+    (-> this (.getSourceDiskEncryptionKey))))
+
+(defn get-name
+  "Name of the resource; provided by the client when the resource is created. The name must be
+   1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   character must be a lowercase letter, and all following characters must be a dash, lowercase
+   letter, or digit, except the last character, which cannot be a dash.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getName))))
+
+(defn get-licenses-list
+  "Any applicable license URI.
+
+  returns: `java.util.List<java.lang.String>`"
+  (^java.util.List [^Image this]
+    (-> this (.getLicensesList))))
+
+(defn get-source-image
+  "URL of the source image used to create this image. This can be a full or valid partial URL. You
+   must provide exactly one of: - this property, or - the rawDisk.source property, or - the
+   sourceDisk property in order to create an image.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getSourceImage))))
+
+(defn get-deprecated
+  "The deprecation status associated with this image.
+
+  returns: `com.google.cloud.compute.v1.DeprecationStatus`"
+  (^com.google.cloud.compute.v1.DeprecationStatus [^Image this]
+    (-> this (.getDeprecated))))
+
+(defn get-label-fingerprint
+  "A fingerprint for the labels being applied to this image, which is essentially a hash of the
+   labels used for optimistic locking. The fingerprint is initially generated by Compute Engine
+   and changes after every request to modify or update labels. You must always provide an
+   up-to-date fingerprint hash in order to update or change labels, otherwise the request will
+   fail with error 412 conditionNotMet.
+
+   To see the latest fingerprint, make a get() request to retrieve an image.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getLabelFingerprint))))
+
+(defn get-archive-size-bytes
+  "Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getArchiveSizeBytes))))
+
+(defn get-description
+  "An optional description of this resource. Provide this property when you create the resource.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getDescription))))
+
+(defn get-source-image-encryption-key
+  "The customer-supplied encryption key of the source image. Required if the source image is
+   protected by a customer-supplied encryption key.
+
+  returns: `com.google.cloud.compute.v1.CustomerEncryptionKey`"
+  (^com.google.cloud.compute.v1.CustomerEncryptionKey [^Image this]
+    (-> this (.getSourceImageEncryptionKey))))
+
+(defn get-family
+  "The name of the image family to which this image belongs. You can create disks by specifying an
+   image family instead of a specific image name. The image family always returns its latest image
+   that is not deprecated. The name of the image family must comply with RFC1035.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getFamily))))
+
+(defn get-disk-size-gb
+  "Size of the image when restored onto a persistent disk (in GB).
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getDiskSizeGb))))
+
+(defn get-image-encryption-key
+  "Encrypts the image using a customer-supplied encryption key.
+
+   After you encrypt an image with a customer-supplied key, you must provide the same key if
+   you use the image later (e.g. to create a disk from the image).
+
+   Customer-supplied encryption keys do not protect access to metadata of the disk.
+
+   If you do not provide an encryption key when creating the image, then the disk will be
+   encrypted using an automatically generated key and you do not need to provide a key to use the
+   image later.
+
+  returns: `com.google.cloud.compute.v1.CustomerEncryptionKey`"
+  (^com.google.cloud.compute.v1.CustomerEncryptionKey [^Image this]
+    (-> this (.getImageEncryptionKey))))
+
+(defn get-id
+  "[Output Only] The unique identifier for the resource. This identifier is defined by the server.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getId))))
+
+(defn get-api-message-request-body
+  "returns: `com.google.api.gax.httpjson.ApiMessage`"
+  (^com.google.api.gax.httpjson.ApiMessage [^Image this]
+    (-> this (.getApiMessageRequestBody))))
+
+(defn get-self-link
+  "[Output Only] Server-defined URL for the resource.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getSelfLink))))
+
+(defn get-source-snapshot
+  "URL of the source snapshot used to create this image. This can be a full or valid partial URL.
+   You must provide exactly one of: - this property, or - the sourceImage property, or - the
+   rawDisk.source property, or - the sourceDisk property in order to create an image.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getSourceSnapshot))))
+
+(defn get-guest-os-features-list
+  "A list of features to enable on the guest operating system. Applicable only for bootable
+   images. Read Enabling guest operating system features to see a list of available options.
+
+  returns: `java.util.List<com.google.cloud.compute.v1.GuestOsFeature>`"
+  (^java.util.List [^Image this]
+    (-> this (.getGuestOsFeaturesList))))
+
+(defn get-source-type
+  "The type of the image used to create this disk. The default and only value is RAW
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getSourceType))))
+
+(defn get-raw-disk
+  "The parameters of the raw disk image.
+
+  returns: `com.google.cloud.compute.v1.RawDisk`"
+  (^com.google.cloud.compute.v1.RawDisk [^Image this]
+    (-> this (.getRawDisk))))
+
+(defn get-license-codes-list
+  "Integer license codes indicating which licenses are attached to this image.
+
+  returns: `java.util.List<java.lang.String>`"
+  (^java.util.List [^Image this]
+    (-> this (.getLicenseCodesList))))
+
+(defn hash-code
+  "returns: `int`"
+  (^Integer [^Image this]
+    (-> this (.hashCode))))
+
+(defn get-source-snapshot-id
+  "[Output Only] The ID value of the snapshot used to create this image. This value may be used to
+   determine whether the snapshot was taken from the current or a previous instance of a given
+   snapshot name.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getSourceSnapshotId))))
+
+(defn get-creation-timestamp
+  "[Output Only] Creation timestamp in RFC3339 text format.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getCreationTimestamp))))
+
+(defn equals
+  "o - `java.lang.Object`
+
+  returns: `boolean`"
+  (^Boolean [^Image this ^java.lang.Object o]
+    (-> this (.equals o))))
+
+(defn get-source-image-id
+  "[Output Only] The ID value of the image used to create this image. This value may be used to
+   determine whether the image was taken from the current or a previous instance of a given image
+   name.
+
+  returns: `java.lang.String`"
+  (^java.lang.String [^Image this]
+    (-> this (.getSourceImageId))))
+
+(defn to-builder
+  "returns: `com.google.cloud.compute.v1.Image$Builder`"
+  (^com.google.cloud.compute.v1.Image$Builder [^Image this]
+    (-> this (.toBuilder))))
+

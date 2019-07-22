@@ -1,0 +1,16 @@
+(ns com.google.cloud.translate.core
+  (:refer-clojure :only [require comment defn ->])
+  (:import ))
+
+(require '[com.google.cloud.translate.Detection])
+(require '[com.google.cloud.translate.Language])
+(require '[com.google.cloud.translate.Translate$LanguageListOption])
+(require '[com.google.cloud.translate.Translate$TranslateOption])
+(require '[com.google.cloud.translate.Translate])
+(require '[com.google.cloud.translate.TranslateException])
+(require '[com.google.cloud.translate.TranslateFactory])
+(require '[com.google.cloud.translate.TranslateOptions$Builder])
+(require '[com.google.cloud.translate.TranslateOptions$DefaultTranslateFactory])
+(require '[com.google.cloud.translate.TranslateOptions$DefaultTranslateRpcFactory])
+(require '[com.google.cloud.translate.TranslateOptions])
+(require '[com.google.cloud.translate.Translation])
