@@ -5,6 +5,10 @@ For each java class was created a separate namespace.
 Each method/field has its own function/field binding.
 Their names are changed for a more native look in the clojure code. Each function has docstring - information about the parameters, return value and possible exceptions.
 
+## Clojars
+
+You can find clojars in README of packages.
+
 ## Class Members Naming Conventions
 
 | Class Member | Java | Clojure |
